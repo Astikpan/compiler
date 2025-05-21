@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Mini Compiler</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Advanced Mini Compiler</h1>
+    <button id="toggleThemeBtn">Dark Mode</button>
+  </header>
+
+  <main>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="inputTab">Input Code</button>
+      <button class="tab-btn" data-tab="outputTab">Output</button>
+      <button class="tab-btn" data-tab="errorsTab">Errors</button>
+      <button class="tab-btn" data-tab="symbolTab">Symbol Table</button>
+      <button class="tab-btn" data-tab="parseTreeTab">Parse Tree</button>
+    </div>
+
+    <section id="inputTab" class="tab-content active">
+      <textarea id="codeInput" spellcheck="false" placeholder="WRITE YOUR CODE HERE..."></textarea>
+      <button id="compileBtn">Compile</button>
+      <button id="autoFormatBtn">Auto-Format</button>
+    </section>
+
+    <section id="outputTab" class="tab-content">
+      <pre id="compilerOutput" class="output"></pre>
+      <button id="exportJSONBtn">Export Output JSON</button>
+      <button id="exportPDFBtn">Export Output PDF</button>
+    </section>
+
+    <section id="errorsTab" class="tab-content">
+      <pre id="errorOutput" class="errors"></pre>
+    </section>
+
+    <section id="symbolTab" class="tab-content">
+      <table id="symbolTable">
+        <thead>
+          <tr><th>Variable</th><th>Type</th><th>Scope</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="parseTreeTab" class="tab-content">
+      <div id="parseTreeContainer" class="mermaid"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="compiler.js"></script>
+</body>
+</html>
